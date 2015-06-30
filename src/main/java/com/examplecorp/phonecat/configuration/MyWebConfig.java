@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages="com.examplecorp.apporinter.controller")
+@ComponentScan(basePackages="com.examplecorp.phonecat.controller")
 public class MyWebConfig {
 
 	@Bean
