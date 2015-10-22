@@ -218,6 +218,33 @@ To see the changes which between any two lessons use the git diff command.
 - Create [MethodSecurityConfiguration]
 - Make get User method secure
 
+### step-4
+
+- Add phone.json to resources.
+- Add jsonschema2pojo plugin to pom
+```xml
+<plugin>
+ <groupId>org.jsonschema2pojo</groupId>
+ <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+ <version>0.4.15</version>
+ <configuration>
+  <sourceDirectory>${basedir}/src/main/resources/schema/phone.json</sourceDirectory>
+  <targetPackage>com.examplecorp.phonecat.model</targetPackage>
+  <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
+  <includeToString>false</includeToString>
+  <sourceType>json</sourceType>
+ </configuration>
+ <executions>
+  <execution>
+   <goals>
+    <goal>generate</goal>
+   </goals>
+  </execution>
+ </executions>
+</plugin>
+```
+- Create mongo repository and controller to use Phone class
+
 ## Development with spring-phonecat
 
 The following docs describe how you can test and develop further this application.

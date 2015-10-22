@@ -95,6 +95,25 @@
      </httpConnector>
     </configuration>
    </plugin>
+   <plugin>
+    <groupId>org.jsonschema2pojo</groupId>
+    <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+    <version>0.4.15</version>
+    <configuration>
+     <sourceDirectory>${basedir}/src/main/resources/schema/phone.json</sourceDirectory>
+     <targetPackage>com.examplecorp.phonecat.model</targetPackage>
+     <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
+     <includeToString>false</includeToString>
+     <sourceType>json</sourceType>
+    </configuration>
+    <executions>
+        <execution>
+            <goals>
+                <goal>generate</goal>
+            </goals>
+        </execution>
+    </executions>
+   </plugin>
   </plugins>
  </build>
 </project>

@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 
 import com.examplecorp.phonecat.model.User;
 import com.examplecorp.phonecat.repository.UserRepository;
@@ -42,6 +43,7 @@ public class AppUserDetailsService implements UserDetailsService {
 		private User user;
 
 		public AppUserDetail(User user) {
+			Assert.notNull(user);
 			this.user= user;
 			for (String ga : Arrays.asList(ROLE_USER, SCOPE_READ, SCOPE_WRITE)) {
 				this.grantedAuthorities.add(new SimpleGrantedAuthority(ga));
