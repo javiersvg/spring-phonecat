@@ -1,4 +1,4 @@
-# Java Spring Phone Catalog Tutorial Application
+# Java Spring Phone Catalog Tutorial Application [![Build Status](https://travis-ci.org/javiersvg/spring-phonecat.svg?branch=master)](https://travis-ci.org/javiersvg/spring-phonecat)
 
 ## Overview
 This is an example application/tutorial learn Spring, REST and other Java technologies.
